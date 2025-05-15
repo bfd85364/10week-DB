@@ -51,7 +51,8 @@ SELECT * FROM users WHERE email LIKE '%Gmail%'
 and DATE(created_at) between '2020-07-12' AND '2020-07-13';
 
 -- 20) naver 을 사용하는 2020-07-12~13 에 가입한 유저의 수를 세기
-
+SELECT * FROM users WHERE email LIKE '%naver%'
+AND DATE(created_at) BETWEEN '2020-07-12' AND '2020-07-13';
 
 -- 21) naver 이메일을 사용하면서, 웹개발 종합반을 신청했고 결제는 kakaopay 이뤄진 주문데이터 추출하기
 SELECT * FROM orders WHERE email like '%naver%' and course_title LIKE '웹개발 종합반' AND payment_method LIKE 'kakaopay'; 
