@@ -53,9 +53,8 @@ select 1 from book c where b.bookid  = c.bookid  and a.custid = b.custid and c.b
  ) SELECT name, publisher from temp where  bookname like '_구%';
 
 -- 문제 7. 출판사별로 출판사의 평균 도서 가격보다 비싼 도서를 구하시오.
-SELECT publisher, avg(price) FROM book Group BY publisher;
 
-SELECT * FROM book a WHERE price > (SELECT avg(price) FROM book b WHERE a.publisher = b.publisher);
+SELECT * FROM book WHERE price > (SELECT avg(BK.price) FROM book BK WHERE publisher = BK.publisher);
 
 -- 문제 8. 대한민국에 거주하는 고객의 이름과 도서를 주문한 고객의 이름을 나타내시오.
 
